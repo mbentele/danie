@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Search, Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -21,12 +22,23 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">D</span>
-            </div>
+            <Image
+              src="/images/logo/logo_rund_300px.png"
+              alt="Danies Rezepte Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+              priority
+            />
             <div className="hidden sm:block">
-              <h1 className="text-white font-bold text-lg">DANIES REZEPTE</h1>
-              <p className="text-gray-300 text-xs">My Daily Kitchen</p>
+              <Image
+                src="/images/logo/schriftzug-transparent.png"
+                alt="Danies Rezepte"
+                width={180}
+                height={32}
+                className="brightness-0 invert"
+                priority
+              />
             </div>
           </Link>
 

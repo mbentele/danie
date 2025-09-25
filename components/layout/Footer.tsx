@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Heart, Instagram, Mail } from 'lucide-react'
 
 export function Footer() {
@@ -11,13 +12,20 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">D</span>
-              </div>
-              <div>
-                <h3 className="text-white font-bold">DANIES REZEPTE</h3>
-                <p className="text-gray-400 text-sm">My Daily Kitchen</p>
-              </div>
+              <Image
+                src="/images/logo/logo_rund_300px.png"
+                alt="Danies Rezepte Logo"
+                width={32}
+                height={32}
+                className="rounded-full"
+              />
+              <Image
+                src="/images/logo/schriftzug-transparent.png"
+                alt="Danies Rezepte"
+                width={160}
+                height={28}
+                className="brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Leckere Rezepte für jeden Tag. Von schnellen Feierabendgerichten

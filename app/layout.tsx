@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Danies Rezepte'
+        alt: 'Danies Rezepte - Die besten Rezepte für ein tolles Ergebnis'
       }
     ]
   },

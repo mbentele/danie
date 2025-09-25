@@ -1,0 +1,26 @@
+{
+  "name": "Danies Rezepte - Die besten Rezepte für ein tolles Ergebnis",
+  "short_name": "Danies Rezepte",
+  "description": "Entdecke leckere und einfache Rezepte von Danie. Von schnellen Feierabendgerichten bis zu besonderen Wochenendprojekten.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#ec4899",
+  "icons": [
+    {
+      "src": "/images/logo/logo_rund.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/logo/logo_rund_300px.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["food", "lifestyle"],
+  "lang": "de",
+  "dir": "ltr"
+}
