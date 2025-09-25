@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/mbentele/Desktop/Entwicklung/Websites/**)",
+      "Read(//Users/mbentele/**)",
+      "WebFetch(domain:cloud.ionos.de)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "WebFetch(domain:www.danie.de)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

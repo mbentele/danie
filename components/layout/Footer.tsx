@@ -1,0 +1,120 @@
+import Link from 'next/link'
+import { Heart, Instagram, Mail } from 'lucide-react'
+
+export function Footer() {
+  const currentYear = new Date().getFullYear()
+
+  return (
+    <footer className="glass-dark mt-16">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold">D</span>
+              </div>
+              <div>
+                <h3 className="text-white font-bold">DANIES REZEPTE</h3>
+                <p className="text-gray-400 text-sm">My Daily Kitchen</p>
+              </div>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Leckere Rezepte für jeden Tag. Von schnellen Feierabendgerichten
+              bis zu besonderen Wochenendprojekten.
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href="https://instagram.com/daniesrezepte"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-pink-400 transition-colors duration-200"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="mailto:kontakt@danie.de"
+                className="text-gray-400 hover:text-pink-400 transition-colors duration-200"
+              >
+                <Mail size={20} />
+              </a>
+            </div>
+          </div>
+
+          {/* Rezepte */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold">Rezepte</h4>
+            <nav className="space-y-2">
+              <Link href="/rezepte" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                Alle Rezepte
+              </Link>
+              <Link href="/kategorien/hauptgerichte" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                Hauptgerichte
+              </Link>
+              <Link href="/kategorien/desserts" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                Desserts
+              </Link>
+              <Link href="/kategorien/vorspeisen" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                Vorspeisen
+              </Link>
+            </nav>
+          </div>
+
+          {/* Über */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold">Über</h4>
+            <nav className="space-y-2">
+              <Link href="/ueber-mich" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                Über mich
+              </Link>
+              <Link href="/kontakt" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                Kontakt
+              </Link>
+              <Link href="/impressum" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                Impressum
+              </Link>
+              <Link href="/datenschutz" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                Datenschutz
+              </Link>
+            </nav>
+          </div>
+
+          {/* Newsletter */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold">Newsletter</h4>
+            <p className="text-gray-400 text-sm">
+              Neue Rezepte direkt in dein Postfach.
+            </p>
+            <form className="space-y-2">
+              <input
+                type="email"
+                placeholder="deine@email.de"
+                className="w-full px-4 py-2 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-pink-500 focus:outline-none transition-colors duration-200"
+              />
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-pink-500 to-pink-600 text-white py-2 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105"
+              >
+                Anmelden
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center space-x-1 text-gray-400 text-sm">
+            <span>© {currentYear} Danies Rezepte. Gemacht mit</span>
+            <Heart size={16} className="text-pink-500 fill-current" />
+            <span>von Daniela Bentele</span>
+          </div>
+          <div className="mt-4 md:mt-0">
+            <p className="text-gray-500 text-xs">
+              "GEGESSEN WIRD IMMER" • Rezepte für jeden Tag
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
