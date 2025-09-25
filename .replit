@@ -22,12 +22,9 @@ externalPort = 80
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 42785
-externalPort = 3000
-
 [agent]
 expertMode = true
+integrations = ["javascript_database:1.0.0"]
 
 [workflows]
 runButton = "Project"
