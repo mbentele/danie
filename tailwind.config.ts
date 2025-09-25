@@ -14,7 +14,10 @@ const config: Config = {
           primary: '#f1f5f9', // Light gray background
           secondary: '#ec4899', // Pink accent from logo
           dark: '#1f2937', // Dark gray header
-        }
+        },
+        border: '#e5e7eb', // Default border color for border-border class
+        background: '#ffffff',
+        foreground: '#1f2937',
       },
       fontFamily: {
         // Adobe Fonts integration ready
