@@ -4,7 +4,11 @@ import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
   title: {
@@ -61,10 +65,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className="scroll-smooth">
-      <head>
-        <link rel="stylesheet" href="https://use.typekit.net/lgm7svp.css" />
-      </head>
-      <body className="font-hoss">
+      <body className={`${inter.variable} font-sans`}>
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">
