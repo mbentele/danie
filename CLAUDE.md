@@ -2,6 +2,30 @@
 
 Diese Datei enthält wichtige Commands für die Entwicklung von danie.de.
 
+## 🎉 Aktueller Status (25. Sept. 2024)
+
+✅ **WordPress Migration abgeschlossen:**
+- 480 Rezepte erfolgreich migriert mit korrekten Bildern
+- Kategorisierung basierend auf WordPress-URL-Struktur implementiert
+- Lightbox-Funktionalität für Rezeptbilder funktionsfähig
+- WordPress-Shortcode-Bereinigung implementiert
+- Nährwerte-Extraktion aus deutschen Rezepttexten
+
+✅ **Suchfunktionalität:**
+- Intelligente Suche mit Kategoriefilterung
+- Client-side Filtering mit "Weitere laden"-Button (50 Rezepte + Nachladen)
+- Korrekte Kategoriezählung für alle 480+ Rezepte
+
+✅ **Serving Size Extraktion:**
+- 29 Rezepte mit korrekten Portionsangaben aus Titeln extrahiert
+- Nur sinnvolle Portionsangaben werden angezeigt (nicht Standard-4)
+- Pattern-Matching für deutsche Portionsangaben implementiert
+
+**Nächste Schritte:**
+- Frontend für Rezeptverwaltung (CRUD Operations)
+- Schwierigkeitsgrad-System
+- Erweiterte Metadaten (Kochzeit, Kategorien, etc.)
+
 ## 📋 Development Commands
 
 ```bash
@@ -91,33 +115,33 @@ npm run build:css
    NEXTAUTH_SECRET=random-secret-key
    ```
 
-## 🔄 WordPress Migration Workflow
+## 🔄 Rezept-Management Scripts
 
 ```bash
-# 1. WordPress-Daten analysieren
+# Rezepte automatisch kategorisieren (basierend auf WordPress-URLs)
+export DATABASE_URL="..." && npx tsx scripts/categorize-recipes.ts
+
+# Portionsangaben aus Rezepttiteln extrahieren
+export DATABASE_URL="..." && npx tsx scripts/extract-servings.ts
+
+# Doppelte Kategorien bereinigen
+export DATABASE_URL="..." && npx tsx scripts/cleanup-duplicate-categories.ts
+
+# WordPress-Daten analysieren (falls nötig)
 node scripts/analyze-wordpress.js
-
-# 2. Rezepte importieren
-node scripts/import-recipes.js
-
-# 3. Bilder optimieren und migrieren
-node scripts/migrate-images.js
-
-# 4. URLs testen und Redirects erstellen
-node scripts/test-redirects.js
 ```
 
-## 🤖 KI-Features Commands
+## 🧹 Maintenance Commands
 
 ```bash
-# OpenAI Test
-node scripts/test-openai.js
+# Content-Bereinigung testen
+npm run test:clean-content
 
-# Search Index erstellen
-node scripts/create-search-index.js
+# Lightbox-Funktionalität testen
+npm run test:lightbox
 
-# Kategorien automatisch zuordnen
-node scripts/auto-categorize.js
+# Suche und Filter testen
+npm run test:search
 ```
 
 ---

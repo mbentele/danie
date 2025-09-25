@@ -27,7 +27,7 @@ export function Footer() {
                 className="brightness-0 invert"
               />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed font-playwrite">
               Leckere Rezepte für jeden Tag. Von schnellen Feierabendgerichten
               bis zu besonderen Wochenendprojekten.
             </p>
@@ -51,7 +51,7 @@ export function Footer() {
 
           {/* Rezepte */}
           <div className="space-y-4">
-            <h4 className="text-white font-semibold">Rezepte</h4>
+            <h4 className="text-white font-hoss font-bold">Rezepte</h4>
             <nav className="space-y-2">
               <Link href="/rezepte" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                 Alle Rezepte
@@ -70,7 +70,7 @@ export function Footer() {
 
           {/* Über */}
           <div className="space-y-4">
-            <h4 className="text-white font-semibold">Über</h4>
+            <h4 className="text-white font-hoss font-bold">Über</h4>
             <nav className="space-y-2">
               <Link href="/ueber-mich" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                 Über mich

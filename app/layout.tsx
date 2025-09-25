@@ -61,7 +61,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className="scroll-smooth">
-      <body className={inter.className}>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/lgm7svp.css" />
+      </head>
+      <body className="font-hoss">
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">
