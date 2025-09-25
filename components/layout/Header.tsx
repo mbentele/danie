@@ -17,29 +17,19 @@ export function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 glass-dark">
+    <header className="sticky top-0 z-50 bg-gray-800/95 backdrop-blur-md border-b border-gray-700">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
+            {/* Original Logo mit Text und rundem Symbol */}
             <Image
-              src="/images/logo/logo_rund_300px.png"
-              alt="Danies Rezepte Logo"
-              width={40}
-              height={40}
-              className="rounded-full"
+              src="/images/logo/logo_breit.png"
+              alt="Danies Rezepte - My Daily Kitchen"
+              width={280}
+              height={72}
               priority
             />
-            <div className="hidden sm:block">
-              <Image
-                src="/images/logo/schriftzug-transparent.png"
-                alt="Danies Rezepte"
-                width={180}
-                height={32}
-                className="brightness-0 invert"
-                priority
-              />
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,7 +38,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-gray-300 hover:text-white transition-colors duration-200 font-hoss font-medium"
               >
                 {item.name}
               </Link>

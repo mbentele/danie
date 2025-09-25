@@ -40,4 +40,4 @@ next-env.d.ts
 .env.production
 
 # uploads
-/public/uploads
+/public/uploadsmigration/

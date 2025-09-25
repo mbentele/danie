@@ -1,0 +1,16 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  <circle cx="200" cy="120" r="40" fill="#EC4899" fill-opacity="0.1"/>
+  <circle cx="120" cy="180" r="25" fill="#FFB3D5" fill-opacity="0.2"/>
+  <circle cx="280" cy="170" r="35" fill="#FDE68A" fill-opacity="0.2"/>
+
+  <!-- Chef hat icon -->
+  <g transform="translate(170, 90)">
+    <path d="M30 25C30 15 25 10 15 10C10 10 5 15 5 25V35H35V25Z" fill="#EC4899" fill-opacity="0.3"/>
+    <rect x="5" y="35" width="30" height="8" rx="2" fill="#EC4899" fill-opacity="0.4"/>
+  </g>
+
+  <!-- Decorative elements -->
+  <text x="200" y="220" font-family="Arial, sans-serif" font-size="18" fill="#64748B" text-anchor="middle" font-weight="500">Rezept Bild</text>
+  <text x="200" y="245" font-family="Arial, sans-serif" font-size="14" fill="#94A3B8" text-anchor="middle">wird geladen...</text>
+</svg>

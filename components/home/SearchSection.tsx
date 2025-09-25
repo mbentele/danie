@@ -1,118 +1,66 @@
 'use client'
 
 import { useState } from 'react'
-import { Search, Sparkles, Camera } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { Search } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 export function SearchSection() {
   const [searchQuery, setSearchQuery] = useState('')
+  const router = useRouter()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement search functionality
-    console.log('Search query:', searchQuery)
+    if (searchQuery.trim()) {
+      router.push(`/rezepte?search=${encodeURIComponent(searchQuery.trim())}`)
+    }
   }
 
-  const aiFeatures = [
-    {
-      icon: <Search size={24} />,
-      title: "Intelligente Suche",
-      description: "Finde Rezepte mit natürlicher Sprache"
-    },
-    {
-      icon: <Camera size={24} />,
-      title: "Zutaten-Scanner",
-      description: "Fotografiere deinen Kühlschrank für Vorschläge"
-    },
-    {
-      icon: <Sparkles size={24} />,
-      title: "Smart Vorschläge",
-      description: "Personalisierte Empfehlungen basierend auf Vorlieben"
-    }
-  ]
-
   return (
-    <section className="py-16 bg-gradient-to-r from-pink-50 to-orange-50">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center space-y-8"
-        >
-          <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Was möchtest du heute kochen?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Durchsuche über 500 Rezepte oder lass dich von unserer KI inspirieren
-            </p>
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-fatfrank text-gradient mb-4">
+            Was möchtest du kochen?
+          </h2>
+          <p className="text-lg text-gray-600 font-hoss">
+            Durchsuche alle Rezepte nach Zutaten, Gerichten oder Kategorien
+          </p>
+        </div>
+
+        <form onSubmit={handleSearch} className="relative max-w-2xl mx-auto">
+          <div className="relative">
+            <Search size={24} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Suche nach Rezepten... (z.B. 'Pasta', 'Kuchen', 'vegetarisch')"
+              className="w-full pl-12 pr-4 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-pink-500 focus:border-transparent font-hoss"
+            />
           </div>
+          <button
+            type="submit"
+            className="btn-primary mt-4 w-full sm:w-auto sm:absolute sm:right-2 sm:top-2 sm:mt-0"
+          >
+            <span className="font-hoss font-semibold">Rezepte finden</span>
+          </button>
+        </form>
 
-          {/* Search Bar */}
-          <div className="max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="relative">
-              <div className="glass rounded-2xl p-2 flex items-center">
-                <div className="flex-1 flex items-center">
-                  <Search size={20} className="text-gray-400 ml-4 mr-3" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="z.B. 'Pasta mit Tomaten' oder 'Schnelles Abendessen'"
-                    className="flex-1 bg-transparent text-gray-700 placeholder-gray-400 outline-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105"
-                >
-                  Suchen
-                </button>
-              </div>
-            </form>
-
-            {/* Quick Search Examples */}
-            <div className="mt-4 flex flex-wrap justify-center gap-2">
-              {[
-                'Vegetarische Pasta',
-                'Schnelle Desserts',
-                'Comfort Food',
-                'Unter 30 Minuten'
-              ].map((example) => (
-                <button
-                  key={example}
-                  onClick={() => setSearchQuery(example)}
-                  className="text-sm text-gray-500 hover:text-pink-600 transition-colors duration-200 px-3 py-1 rounded-full hover:bg-white/50"
-                >
-                  {example}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* AI Features Preview */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {aiFeatures.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass rounded-xl p-6 text-center space-y-4"
+        {/* Quick Search Tags */}
+        <div className="mt-8 text-center">
+          <p className="text-gray-500 text-sm font-hoss mb-4">Beliebte Suchbegriffe:</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {['Pasta', 'Kuchen', 'Vegetarisch', 'Schnell', 'Dessert', 'Brot'].map((tag) => (
+              <button
+                key={tag}
+                onClick={() => setSearchQuery(tag)}
+                className="glass px-4 py-2 rounded-full text-sm text-gray-600 hover:text-pink-600 transition-colors duration-200 font-hoss"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white mx-auto">
-                  {feature.icon}
-                </div>
-                <h3 className="font-semibold text-gray-900">{feature.title}</h3>
-                <p className="text-sm text-gray-600">{feature.description}</p>
-                <button className="text-pink-600 text-sm font-medium hover:text-pink-700 transition-colors duration-200">
-                  Bald verfügbar →
-                </button>
-              </motion.div>
+                {tag}
+              </button>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
