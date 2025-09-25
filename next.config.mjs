@@ -8,10 +8,9 @@ const nextConfig = {
       },
     ],
   },
-  serverExternalPackages: ['@neondatabase/serverless'],
-  allowedDevOrigins: process.env.REPLIT_DOMAINS ? [process.env.REPLIT_DOMAINS.split(",")[0]] : ["localhost:5000"],
-  // Enable static generation for better performance
-  output: 'standalone',
+  experimental: {
+    serverComponentsExternalPackages: ['@neondatabase/serverless'],
+  },
   // Optimize for food blog
   compress: true,
   poweredByHeader: false,
