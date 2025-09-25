@@ -7,28 +7,28 @@ import { Instagram, ExternalLink } from 'lucide-react'
 const instagramPosts = [
   {
     id: 1,
-    image: '/images/instagram/post1.jpg',
+    image: '/images/recipes/schoko-zimt-schnecken.jpg',
     caption: 'Heute gibt es fluffige Pancakes zum Frühstück! 🥞',
     likes: 234,
     url: 'https://instagram.com/daniesrezepte'
   },
   {
     id: 2,
-    image: '/images/instagram/post2.jpg',
+    image: '/images/recipes/gnocchi-pfanne.jpg',
     caption: 'Comfort Food für den Herbst: Kürbissuppe 🎃',
     likes: 189,
     url: 'https://instagram.com/daniesrezepte'
   },
   {
     id: 3,
-    image: '/images/instagram/post3.jpg',
+    image: '/images/recipes/mini-donuts.jpg',
     caption: 'King Cat hilft beim Backen 🐱👩‍🍳',
     likes: 312,
     url: 'https://instagram.com/daniesrezepte'
   },
   {
     id: 4,
-    image: '/images/instagram/post4.jpg',
+    image: '/images/recipes/schoko-zimt-schnecken.jpg',
     caption: 'Meal Prep Sunday! Diese Woche wird gesund ✨',
     likes: 156,
     url: 'https://instagram.com/daniesrezepte'
