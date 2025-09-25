@@ -2,58 +2,67 @@
 
 import { motion } from 'framer-motion'
 import { Search, Clock, Users, ChefHat } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export function HeroSection() {
-  const currentTime = new Date().getHours()
-  const currentMonth = new Date().getMonth()
+  const [dynamicContent, setDynamicContent] = useState({
+    title: "Willkommen in Danies Küche! 👋",
+    subtitle: "Die besten Rezepte für ein tolles Ergebnis",
+    suggestion: "Was soll heute gekocht werden?"
+  })
 
-  // Dynamic content based on time and season
-  const getDynamicContent = () => {
-    // Morning suggestions
-    if (currentTime >= 6 && currentTime < 11) {
+  useEffect(() => {
+    const currentTime = new Date().getHours()
+    const currentMonth = new Date().getMonth()
+
+    // Dynamic content based on time and season
+    const getDynamicContent = () => {
+      // Morning suggestions
+      if (currentTime >= 6 && currentTime < 11) {
+        return {
+          title: "Guten Morgen! 🌅",
+          subtitle: "Starte den Tag mit einem leckeren Frühstück",
+          suggestion: "Pancakes oder Overnight Oats?"
+        }
+      }
+
+      // Lunch suggestions
+      if (currentTime >= 11 && currentTime < 15) {
+        return {
+          title: "Mittagszeit! 🍽️",
+          subtitle: "Schnelle und leckere Gerichte für deine Pause",
+          suggestion: "15-Minuten Rezepte entdecken"
+        }
+      }
+
+      // Evening suggestions
+      if (currentTime >= 17 && currentTime < 21) {
+        return {
+          title: "Feierabend-Küche! 👨‍🍳",
+          subtitle: "Entspannte Rezepte für nach der Arbeit",
+          suggestion: "Comfort Food für heute"
+        }
+      }
+
+      // Winter/Christmas season (Nov-Jan)
+      if (currentMonth >= 10 || currentMonth <= 1) {
+        return {
+          title: "Winterküche! ❄️",
+          subtitle: "Wärmende Rezepte für kalte Tage",
+          suggestion: "Eintöpfe und heiße Getränke"
+        }
+      }
+
+      // Default
       return {
-        title: "Guten Morgen! 🌅",
-        subtitle: "Starte den Tag mit einem leckeren Frühstück",
-        suggestion: "Pancakes oder Overnight Oats?"
+        title: "Willkommen in Danies Küche! 👋",
+        subtitle: "Die besten Rezepte für ein tolles Ergebnis",
+        suggestion: "Was soll heute gekocht werden?"
       }
     }
 
-    // Lunch suggestions
-    if (currentTime >= 11 && currentTime < 15) {
-      return {
-        title: "Mittagszeit! 🍽️",
-        subtitle: "Schnelle und leckere Gerichte für deine Pause",
-        suggestion: "15-Minuten Rezepte entdecken"
-      }
-    }
-
-    // Evening suggestions
-    if (currentTime >= 17 && currentTime < 21) {
-      return {
-        title: "Feierabend-Küche! 👨‍🍳",
-        subtitle: "Entspannte Rezepte für nach der Arbeit",
-        suggestion: "Comfort Food für heute"
-      }
-    }
-
-    // Winter/Christmas season (Nov-Jan)
-    if (currentMonth >= 10 || currentMonth <= 1) {
-      return {
-        title: "Winterküche! ❄️",
-        subtitle: "Wärmende Rezepte für kalte Tage",
-        suggestion: "Eintöpfe und heiße Getränke"
-      }
-    }
-
-    // Default
-    return {
-      title: "Willkommen in Danies Küche! 👋",
-      subtitle: "Die besten Rezepte für ein tolles Ergebnis",
-      suggestion: "Was soll heute gekocht werden?"
-    }
-  }
-
-  const dynamicContent = getDynamicContent()
+    setDynamicContent(getDynamicContent())
+  }, [])
 
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">

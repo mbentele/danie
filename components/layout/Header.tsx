@@ -37,6 +37,7 @@ export function Header() {
                 width={180}
                 height={32}
                 className="brightness-0 invert"
+                style={{ height: 'auto' }}
                 priority
               />
             </div>
