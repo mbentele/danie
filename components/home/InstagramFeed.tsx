@@ -1,43 +1,6 @@
-<<<<<<< HEAD
 'use client'
 
-import { motion } from 'framer-motion'
-import { Instagram, ExternalLink } from 'lucide-react'
-
-// Mock Instagram-Daten - später durch echte Instagram API ersetzen
-const instagramPosts = [
-  {
-    id: 1,
-    image: '/images/recipes/schoko-zimt-schnecken.jpg',
-    caption: 'Heute gibt es fluffige Pancakes zum Frühstück! 🥞',
-    likes: 234,
-    url: 'https://instagram.com/daniesrezepte'
-  },
-  {
-    id: 2,
-    image: '/images/recipes/gnocchi-pfanne.jpg',
-    caption: 'Comfort Food für den Herbst: Kürbissuppe 🎃',
-    likes: 189,
-    url: 'https://instagram.com/daniesrezepte'
-  },
-  {
-    id: 3,
-    image: '/images/recipes/mini-donuts.jpg',
-    caption: 'King Cat hilft beim Backen 🐱👩‍🍳',
-    likes: 312,
-    url: 'https://instagram.com/daniesrezepte'
-  },
-  {
-    id: 4,
-    image: '/images/recipes/schoko-zimt-schnecken.jpg',
-    caption: 'Meal Prep Sunday! Diese Woche wird gesund ✨',
-    likes: 156,
-    url: 'https://instagram.com/daniesrezepte'
-  }
-]
-
-=======
->>>>>>> 53122b335e8391d7bd0eb0c4b41a5c19d36d8759
+import { Instagram } from 'lucide-react'
 export function InstagramFeed() {
   return (
     <section className="py-16 bg-gray-50">

@@ -30,20 +30,6 @@ export function Header() {
               height={72}
               priority
             />
-<<<<<<< HEAD
-            <div className="hidden sm:block">
-              <Image
-                src="/images/logo/schriftzug-transparent.png"
-                alt="Danies Rezepte"
-                width={180}
-                height={32}
-                className="brightness-0 invert"
-                style={{ height: 'auto' }}
-                priority
-              />
-            </div>
-=======
->>>>>>> 53122b335e8391d7bd0eb0c4b41a5c19d36d8759
           </Link>
 
           {/* Desktop Navigation */}
