@@ -1,8 +1,0 @@
-run = "npm run dev"
-modules = ["nodejs-18"]
-
-[nix]
-channel = "stable-22_11"
-
-[deployment]
-run = ["sh", "-c", "npm run build && npm run start"]
