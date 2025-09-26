@@ -21,23 +21,15 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['@neondatabase/serverless'],
   },
-  // Replit Configuration
-  async rewrites() {
-    return [
-      {
-        source: '/',
-        destination: '/',
-      },
-    ]
-  },
-  // Port configuration for Replit
-  env: {
-    PORT: process.env.PORT || '3000',
-  },
   // Optimize for food blog
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  // Server configuration for Replit
+  server: {
+    port: 3000,
+    hostname: '0.0.0.0',
+  },
 }
 
 export default nextConfig
