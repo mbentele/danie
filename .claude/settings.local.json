@@ -36,7 +36,8 @@
       "Bash(psql:*)",
       "Bash(npx tsx:*)",
       "Bash(open http://localhost:3000/kategorien)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(git restore:*)"
     ],
     "deny": [],
     "ask": []
