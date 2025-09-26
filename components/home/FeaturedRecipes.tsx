@@ -76,7 +76,7 @@ export async function FeaturedRecipes() {
                     <div className="absolute top-3 right-3">
                       <span
                         className="px-3 py-1 rounded-full text-xs font-hoss font-semibold text-white"
-                        style={{ backgroundColor: category.color }}
+                        style={{ backgroundColor: category.color || '#ec4899' }}
                       >
                         {category.name}
                       </span>

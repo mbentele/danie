@@ -46,7 +46,7 @@ export default function UeberMichPage() {
         {/* Full Width Text Below - DIREKT unter dem Bild */}
         <div className="space-y-6 font-hoss text-gray-700 leading-relaxed mb-16">
           <p>
-            Das Kochen ist für mich ein wunderbarer kreativer Ausgleich zur Arbeit, in der Küche komme ich zur Ruhe, kann mich „austoben" und habe dort viel Zeit, um nachzudenken. Auch findet ihr mich viel draußen in der Natur, ich gehe sehr gerne spazieren, wandern… ebenso liebe ich es mich mit Freunden zu treffen, zu reisen, zu lesen und zu malen… ihr seht, immer was zu tun bei mir. Stillsitzen fällt mir schwer und ich bin immer am herumwuseln.
+            Das Kochen ist für mich ein wunderbarer kreativer Ausgleich zur Arbeit, in der Küche komme ich zur Ruhe, kann mich &bdquo;austoben&ldquo; und habe dort viel Zeit, um nachzudenken. Auch findet ihr mich viel draußen in der Natur, ich gehe sehr gerne spazieren, wandern… ebenso liebe ich es mich mit Freunden zu treffen, zu reisen, zu lesen und zu malen… ihr seht, immer was zu tun bei mir. Stillsitzen fällt mir schwer und ich bin immer am herumwuseln.
           </p>
 
           <p>
@@ -54,7 +54,7 @@ export default function UeberMichPage() {
           </p>
 
           <p>
-            So gingen die Jahre ins Land und die Fixprodukte habe ich inzwischen „ad acta" gelegt, in der Regel wird frisch gekocht, gebacken und mit kleinen Kniffs und Tricks aus einem einfachen Gericht ein wahrer Gaumenschmaus. Wichtig ist mir in der Küche die Kreativität, das Ausprobieren, das „keine Angst" haben, dass etwas schief geht… ich probiere sehr gerne aus, mixe, würze, teste aus, nur so kommt man darauf, was gut ist und was weniger. Das artet manchmal in ein dezentes Küchenchaos aus, aber meist mit einem leckeren Ergebnis…
+            So gingen die Jahre ins Land und die Fixprodukte habe ich inzwischen &bdquo;ad acta&ldquo; gelegt, in der Regel wird frisch gekocht, gebacken und mit kleinen Kniffs und Tricks aus einem einfachen Gericht ein wahrer Gaumenschmaus. Wichtig ist mir in der Küche die Kreativität, das Ausprobieren, das &bdquo;keine Angst&ldquo; haben, dass etwas schief geht… ich probiere sehr gerne aus, mixe, würze, teste aus, nur so kommt man darauf, was gut ist und was weniger. Das artet manchmal in ein dezentes Küchenchaos aus, aber meist mit einem leckeren Ergebnis…
           </p>
 
           <p>
@@ -71,7 +71,7 @@ export default function UeberMichPage() {
             >
               @danie77_simple_good_food
             </a>{' '}
-            habe ich 2016 anfangen zu füttern… „schuld" war meine Tochter, die damals einen Account wollte und ich als Mama einfach noch einen Blick auf mein Kind haben wollte… dass ich daran so Freude haben werde und auch meine Follower mir immer wieder durch ihr tolles feedback so viel Bestätigung geben, hätte ich niemals für möglich gehalten. Ich habe, für mich selbstverständlich, nie follower gekauft, meine Kooperartionspartner wähle ich nicht nach Profit aus, sondern nach ihrem Produkt! Ich verdiene meinen Lebensunterhalt als Schulsekretärin, nicht als Influencerin. Fast alle Rezepte und noch viele mehr findet Ihr also auf{' '}
+            habe ich 2016 anfangen zu füttern… &bdquo;schuld&ldquo; war meine Tochter, die damals einen Account wollte und ich als Mama einfach noch einen Blick auf mein Kind haben wollte… dass ich daran so Freude haben werde und auch meine Follower mir immer wieder durch ihr tolles feedback so viel Bestätigung geben, hätte ich niemals für möglich gehalten. Ich habe, für mich selbstverständlich, nie follower gekauft, meine Kooperartionspartner wähle ich nicht nach Profit aus, sondern nach ihrem Produkt! Ich verdiene meinen Lebensunterhalt als Schulsekretärin, nicht als Influencerin. Fast alle Rezepte und noch viele mehr findet Ihr also auf{' '}
             <a
               href="https://www.instagram.com/danie77_simple_good_food/"
               target="_blank"

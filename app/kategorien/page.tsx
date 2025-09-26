@@ -40,7 +40,7 @@ export default async function KategorienPage() {
             >
               <div
                 className="w-16 h-16 rounded-full mb-4 flex items-center justify-center text-white text-2xl font-fatfrank"
-                style={{ backgroundColor: category.color }}
+                style={{ backgroundColor: category.color || '#ec4899' }}
               >
                 {category.name.charAt(0)}
               </div>

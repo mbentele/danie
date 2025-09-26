@@ -31,7 +31,7 @@ interface Category {
   name: string
   slug: string
   description?: string
-  color: string
+  color: string | null
 }
 
 interface RecipeCardProps {
@@ -89,7 +89,7 @@ export function RecipeCard({ recipe, category }: RecipeCardProps) {
             {category && (
               <span
                 className="px-3 py-1 rounded-full text-sm font-hoss font-semibold text-white"
-                style={{ backgroundColor: category.color }}
+                style={{ backgroundColor: category.color || '#ec4899' }}
               >
                 {category.name}
               </span>

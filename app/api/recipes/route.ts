@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { recipes, categories, recipeCategories } from '@/lib/db/schema'
-import { eq, desc } from 'drizzle-orm'
+import { eq, desc, and, like } from 'drizzle-orm'
 
 export async function GET(request: Request) {
   try {
@@ -11,6 +11,17 @@ export async function GET(request: Request) {
     const category = searchParams.get('category')
     const search = searchParams.get('search')
 
+    // Build where conditions
+    const conditions = [eq(recipes.published, true)]
+    
+    if (category) {
+      conditions.push(eq(categories.slug, category))
+    }
+    
+    if (search) {
+      conditions.push(like(recipes.title, `%${search}%`))
+    }
+
     let query = db
       .select({
         recipe: recipes,
@@ -19,18 +30,8 @@ export async function GET(request: Request) {
       .from(recipes)
       .leftJoin(recipeCategories, eq(recipes.id, recipeCategories.recipeId))
       .leftJoin(categories, eq(recipeCategories.categoryId, categories.id))
-      .where(eq(recipes.published, true))
+      .where(and(...conditions))
       .orderBy(desc(recipes.updatedAt))
-
-    // Add filters if provided
-    if (category) {
-      query = query.where(eq(categories.slug, category))
-    }
-
-    if (search) {
-      // This would need to be implemented properly with SQL LIKE or full-text search
-      // For now, we'll skip search filtering in the API and handle it client-side
-    }
 
     const recipesData = await query
       .offset(offset)

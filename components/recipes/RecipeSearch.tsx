@@ -20,7 +20,7 @@ interface Category {
   id: string
   name: string
   slug: string
-  color: string
+  color: string | null
 }
 
 interface RecipeSearchProps {
@@ -115,7 +115,7 @@ export function RecipeSearch({ initialRecipes, categories }: RecipeSearchProps) 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
                 style={{
-                  backgroundColor: selectedCategory === category.slug ? category.color : undefined
+                  backgroundColor: selectedCategory === category.slug ? (category.color || '#ec4899') : undefined
                 }}
               >
                 {category.name} ({categoryCount})
@@ -156,7 +156,7 @@ export function RecipeSearch({ initialRecipes, categories }: RecipeSearchProps) 
                     <div className="absolute top-3 right-3">
                       <span
                         className="px-3 py-1 rounded-full text-xs font-hoss font-semibold text-white"
-                        style={{ backgroundColor: category.color }}
+                        style={{ backgroundColor: category.color || '#ec4899' }}
                       >
                         {category.name}
                       </span>

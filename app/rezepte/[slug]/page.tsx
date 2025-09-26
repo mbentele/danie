@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { db } from '@/lib/db'
 import { recipes, categories, recipeCategories } from '@/lib/db/schema'
-import { eq, ne, limit } from 'drizzle-orm'
+import { eq, ne, and } from 'drizzle-orm'
 import { Clock, Users, ChefHat, ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import { RecipeCard } from '@/components/recipes/RecipeCard'
@@ -60,8 +60,10 @@ async function getSimilarRecipes(currentRecipeSlug: string, categoryId?: string)
       .from(recipes)
       .leftJoin(recipeCategories, eq(recipes.id, recipeCategories.recipeId))
       .leftJoin(categories, eq(recipeCategories.categoryId, categories.id))
-      .where(eq(recipes.published, true))
-      .where(ne(recipes.id, currentRecipe[0].id))
+      .where(and(
+        eq(recipes.published, true),
+        ne(recipes.id, currentRecipe[0].id)
+      ))
       .limit(3)
 
     return similarRecipes
@@ -87,7 +89,7 @@ export default async function RecipePage({ params }: RecipePageProps) {
   let ingredients: string[] = []
   let instructions: string[] = []
   let additionalImages: string[] = []
-  let nutrition = {}
+  let nutrition: any = {}
 
   try {
     const rawIngredients = Array.isArray(recipe.ingredients) ? recipe.ingredients : JSON.parse(recipe.ingredients as string)
@@ -101,7 +103,7 @@ export default async function RecipePage({ params }: RecipePageProps) {
     instructions = cleanInstructions
     nutrition = extractedNutrition
 
-    additionalImages = Array.isArray(recipe.images) ? recipe.images : JSON.parse(recipe.images as string || '[]')
+    additionalImages = Array.isArray(recipe.images) ? recipe.images : JSON.parse(recipe.images || '[]')
   } catch (e) {
     console.error('Error parsing recipe data:', e)
   }
@@ -121,7 +123,7 @@ export default async function RecipePage({ params }: RecipePageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Images */}
             <RecipeImages
-              featuredImage={recipe.featuredImage}
+              featuredImage={recipe.featuredImage || undefined}
               additionalImages={additionalImages}
               title={recipe.title}
             />
@@ -168,7 +170,7 @@ export default async function RecipePage({ params }: RecipePageProps) {
                 <div className="mb-6">
                   <span
                     className="px-4 py-2 rounded-full text-sm font-hoss font-semibold text-white"
-                    style={{ backgroundColor: category.color }}
+                    style={{ backgroundColor: category.color || '#ec4899' }}
                   >
                     {category.name}
                   </span>

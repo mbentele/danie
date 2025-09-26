@@ -118,7 +118,7 @@ export function Footer() {
           </div>
           <div className="mt-4 md:mt-0">
             <p className="text-gray-500 text-xs">
-              "GEGESSEN WIRD IMMER" • Rezepte für jeden Tag
+              &ldquo;GEGESSEN WIRD IMMER&rdquo; • Rezepte für jeden Tag
             </p>
           </div>
         </div>

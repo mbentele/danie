@@ -5,7 +5,9 @@ modules = ["nodejs-18"]
 channel = "stable-22_11"
 
 [deployment]
-run = ["sh", "-c", "npm run build && npm run start"]
+run = ["npm", "run", "start"]
+deploymentTarget = "autoscale"
+build = ["npm", "run", "build"]
 
 [agent]
 expertMode = true

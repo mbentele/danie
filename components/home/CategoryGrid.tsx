@@ -44,7 +44,7 @@ export async function CategoryGrid() {
                 {/* Category Icon/Color */}
                 <div
                   className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
-                  style={{ backgroundColor: category.color }}
+                  style={{ backgroundColor: category.color || '#ec4899' }}
                 >
                   <span className="text-2xl text-white font-fatfrank">
                     {category.name.charAt(0)}
