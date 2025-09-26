@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { CookieConsentProvider } from '@/lib/cookie-consent'
+import { CookieBanner } from '@/components/layout/CookieBanner'
 
 export const metadata: Metadata = {
   title: {
@@ -59,13 +61,16 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <body className="font-hoss">
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <CookieConsentProvider>
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
+          <CookieBanner />
+        </CookieConsentProvider>
       </body>
     </html>
   )

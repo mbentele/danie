@@ -1,9 +1,13 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
-import { Heart, Instagram, Mail } from 'lucide-react'
+import { Heart, Instagram, Mail, Settings } from 'lucide-react'
+import { useCookieConsent } from '@/lib/cookie-consent'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const { openPreferences } = useCookieConsent()
 
   return (
     <footer className="glass-dark mt-16">
@@ -84,6 +88,9 @@ export function Footer() {
               <Link href="/datenschutz" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                 Datenschutz
               </Link>
+              <Link href="/cookies" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                Cookie-Richtlinie
+              </Link>
             </nav>
           </div>
 
@@ -110,16 +117,29 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-1 text-gray-400 text-sm">
-            <span>© {currentYear} Danies Rezepte. Gemacht mit</span>
-            <Heart size={16} className="text-pink-500 fill-current" />
-            <span>von Daniela Bentele</span>
+        <div className="border-t border-gray-700 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+            <div className="flex items-center space-x-1 text-gray-400 text-sm">
+              <span>© {currentYear} Danies Rezepte. Gemacht mit</span>
+              <Heart size={16} className="text-pink-500 fill-current" />
+              <span>von Daniela Bentele</span>
+            </div>
+            <div className="mt-4 md:mt-0">
+              <p className="text-gray-500 text-xs">
+                &ldquo;GEGESSEN WIRD IMMER&rdquo; • Rezepte für jeden Tag
+              </p>
+            </div>
           </div>
-          <div className="mt-4 md:mt-0">
-            <p className="text-gray-500 text-xs">
-              &ldquo;GEGESSEN WIRD IMMER&rdquo; • Rezepte für jeden Tag
-            </p>
+
+          {/* Cookie Settings Button */}
+          <div className="text-center">
+            <button
+              onClick={openPreferences}
+              className="inline-flex items-center space-x-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white rounded-lg transition-all duration-200 text-sm"
+            >
+              <Settings size={14} />
+              <span>Cookie-Einstellungen</span>
+            </button>
           </div>
         </div>
       </div>

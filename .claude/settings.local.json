@@ -41,7 +41,8 @@
       "WebFetch(domain:use.typekit.net)",
       "Bash(find:*)",
       "Bash(lsof:*)",
-      "Bash(killall:*)"
+      "Bash(killall:*)",
+      "Bash(npx next:*)"
     ],
     "deny": [],
     "ask": []
