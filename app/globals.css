@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 /* Adobe Fonts - wird später über CDN eingebunden */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Inter Font wird über Next.js Font System geladen (app/layout.tsx) */
 
 :root {
   /* Danie.de Brand Colors */
   --color-brand-primary: #f1f5f9;
   --color-brand-secondary: #ec4899;
   --color-brand-dark: #1f2937;
+
+  /* Adobe Fonts Variables - Fallback zu Inter bis Adobe CDN eingebunden */
+  --font-freight-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-source-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 
   /* Glassmorphism Variables */
   --glass-bg: rgba(255, 255, 255, 0.8);
