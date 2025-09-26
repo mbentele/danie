@@ -39,7 +39,9 @@
       "Bash(git reset:*)",
       "Bash(git restore:*)",
       "WebFetch(domain:use.typekit.net)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(lsof:*)",
+      "Bash(killall:*)"
     ],
     "deny": [],
     "ask": []

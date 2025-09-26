@@ -34,6 +34,11 @@ Diese Datei enthält wichtige Commands für die Entwicklung von danie.de.
 - Alle Schriftgrößen global vergrößert für bessere Lesbarkeit
 - Emojis komplett entfernt (User-Präferenz)
 
+✅ **Hydration & Deployment (NEU):**
+- Replit Hydration-Fehler behoben durch Entfernung manueller Font-Loading
+- Adobe Fonts werden nun ausschließlich via globals.css @import geladen
+- Erfolgreiche Bereitstellung auf GitHub mit korrekter Upstream-Konfiguration
+
 **Nächste Schritte:**
 - Frontend für Rezeptverwaltung (CRUD Operations)
 - Schwierigkeitsgrad-System
