@@ -1,23 +1,8 @@
-run = "npm run dev -- --port 3000 --hostname 0.0.0.0"
+run = "npm run dev"
 modules = ["nodejs-18"]
-
-[env]
-PORT = "3000"
 
 [nix]
 channel = "stable-22_11"
 
 [deployment]
 run = ["sh", "-c", "npm run build && npm run start"]
-
-[[ports]]
-localPort = 3000
-externalPort = 80
-exposeLocalhost = true
-
-[languages.javascript]
-pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
-syntax = "javascript"
-
-[languages.javascript.languageServer]
-start = ["typescript-language-server", "--stdio"]
