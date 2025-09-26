@@ -1,4 +1,4 @@
-run = "npm run dev"
+run = "npm run dev -- --port 3000 --hostname 0.0.0.0"
 modules = ["nodejs-18"]
 
 [nix]
@@ -10,6 +10,7 @@ run = ["sh", "-c", "npm run build && npm run start"]
 [[ports]]
 localPort = 3000
 externalPort = 80
+exposeLocalhost = true
 
 [languages.javascript]
 pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
