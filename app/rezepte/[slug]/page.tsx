@@ -107,7 +107,7 @@ export default async function RecipePage({ params }: RecipePageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-orange-50">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8">
         {/* Back Navigation */}
         <div className="mb-6">

@@ -20,7 +20,7 @@ export function HeroSection() {
       // Morning suggestions
       if (currentTime >= 6 && currentTime < 11) {
         return {
-          title: "Guten Morgen! 🌅",
+          title: "Guten Morgen!",
           subtitle: "Starte den Tag mit einem leckeren Frühstück",
           suggestion: "Pancakes oder Overnight Oats?"
         }
@@ -29,7 +29,7 @@ export function HeroSection() {
       // Lunch suggestions
       if (currentTime >= 11 && currentTime < 15) {
         return {
-          title: "Mittagszeit! 🍽️",
+          title: "Mittagszeit!",
           subtitle: "Schnelle und leckere Gerichte für deine Pause",
           suggestion: "15-Minuten Rezepte entdecken"
         }
@@ -38,7 +38,7 @@ export function HeroSection() {
       // Evening suggestions
       if (currentTime >= 17 && currentTime < 21) {
         return {
-          title: "Feierabend-Küche! 👨‍🍳",
+          title: "Feierabend-Küche!",
           subtitle: "Entspannte Rezepte für nach der Arbeit",
           suggestion: "Comfort Food für heute"
         }
@@ -47,7 +47,7 @@ export function HeroSection() {
       // Winter/Christmas season (Nov-Jan)
       if (currentMonth >= 10 || currentMonth <= 1) {
         return {
-          title: "Winterküche! ❄️",
+          title: "Winterküche!",
           subtitle: "Wärmende Rezepte für kalte Tage",
           suggestion: "Eintöpfe und heiße Getränke"
         }
@@ -55,7 +55,7 @@ export function HeroSection() {
 
       // Default
       return {
-        title: "Willkommen in Danies Küche! 👋",
+        title: "Willkommen in Danies Küche!",
         subtitle: "Die besten Rezepte für ein tolles Ergebnis",
         suggestion: "Was soll heute gekocht werden?"
       }
@@ -83,7 +83,6 @@ export function HeroSection() {
           }}
           className="absolute top-20 left-20 text-6xl opacity-20"
         >
-          🥐
         </motion.div>
         <motion.div
           animate={{
@@ -97,7 +96,6 @@ export function HeroSection() {
           }}
           className="absolute top-32 right-32 text-4xl opacity-20"
         >
-          🍅
         </motion.div>
         <motion.div
           animate={{
@@ -111,7 +109,6 @@ export function HeroSection() {
           }}
           className="absolute bottom-40 left-32 text-5xl opacity-20"
         >
-          🧄
         </motion.div>
       </div>
 
@@ -124,13 +121,13 @@ export function HeroSection() {
         >
           {/* Dynamic Greeting */}
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold text-gradient">
+            <h1 className="text-4xl md:text-6xl font-fatfrank text-gradient">
               {dynamicContent.title}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-hoss">
               {dynamicContent.subtitle}
             </p>
-            <p className="text-lg text-gray-500">
+            <p className="text-lg text-gray-500 font-hoss">
               {dynamicContent.suggestion}
             </p>
           </div>

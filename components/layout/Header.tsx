@@ -10,10 +10,10 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
+    { name: 'Home', href: '/' },
     { name: 'Rezepte', href: '/rezepte' },
     { name: 'Kategorien', href: '/kategorien' },
-    { name: 'Über mich', href: '/ueber-mich' },
-    { name: 'Kontakt', href: '/kontakt' }
+    { name: 'Über mich', href: '/ueber-mich' }
   ]
 
   return (
@@ -38,7 +38,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 font-hoss font-medium"
+                className="text-gray-300 hover:text-white transition-colors duration-200 font-hoss font-medium text-xl"
               >
                 {item.name}
               </Link>
@@ -76,7 +76,7 @@ export function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/50 rounded-lg transition-all duration-200"
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700/50 rounded-lg transition-all duration-200 text-xl"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}

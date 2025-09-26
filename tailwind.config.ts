@@ -20,12 +20,10 @@ const config: Config = {
         foreground: '#1f2937',
       },
       fontFamily: {
-        // Adobe Fonts integration
-        'fatfrank': ['fatfrank', 'system-ui', 'sans-serif'],
-        'hoss': ['hoss-round', 'system-ui', 'sans-serif'],
-        'playwrite': ['playwrite-cc-dk-uloopet', 'cursive'],
-        sans: ['var(--font-freight-sans)', 'system-ui', 'sans-serif'],
-        body: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
+        // Only Adobe Fonts - no other fonts allowed
+        'fatfrank': ['fatfrank'],
+        'hoss': ['hoss-round'],
+        'playwrite': ['playwrite-cc-dk-uloopet'],
       },
       typography: {
         DEFAULT: {

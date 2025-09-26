@@ -45,7 +45,7 @@ export default async function RezeptePage() {
   ])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-orange-50">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-fatfrank text-gradient mb-4">
