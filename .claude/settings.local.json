@@ -37,7 +37,8 @@
       "Bash(npx tsx:*)",
       "Bash(open http://localhost:3000/kategorien)",
       "Bash(git reset:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "WebFetch(domain:use.typekit.net)"
     ],
     "deny": [],
     "ask": []

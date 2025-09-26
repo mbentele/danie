@@ -1,15 +1,21 @@
+@import url('https://use.typekit.net/lgm7svp.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Adobe Fonts - über TypeKit CDN eingebunden */
-/* Font Loading Test */
-.font-test {
-  font-family: 'fatfrank', sans-serif !important;
+/* Adobe Fonts - direkt via CSS Import */
+/* Explizite Font Faces für bessere Sicherheit */
+.font-fatfrank {
+  font-family: 'fatfrank', Arial, sans-serif !important;
 }
 
-.font-test-hoss {
-  font-family: 'hoss-round', sans-serif !important;
+.font-hoss {
+  font-family: 'hoss-round', Arial, sans-serif !important;
+}
+
+.font-playwrite {
+  font-family: 'playwrite-cc-dk-uloopet', cursive !important;
 }
 
 :root {
@@ -34,8 +40,7 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-slate-50 to-gray-100 text-gray-900;
-    font-family: 'hoss-round', system-ui, -apple-system, sans-serif;
+    @apply bg-gradient-to-br from-slate-50 to-gray-100 text-gray-900 font-hoss;
   }
 
   /* Smooth scrolling */
