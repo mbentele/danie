@@ -25,11 +25,6 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  // Server configuration for Replit
-  server: {
-    port: 3000,
-    hostname: '0.0.0.0',
-  },
 }
 
 export default nextConfig
